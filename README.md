@@ -4,7 +4,7 @@ docker/apptainer container with commonly used tools
 
 ## tools available
 
-- bazam 1.0.1 wih java 11 to run it
+- bazam 1.0.1 wih java 1.8 to run it
 - bwa-mem2
 - samtools
 - samblaster
@@ -25,3 +25,7 @@ docker push fcliquet/bioinfo-swissknife:latest
 # Convert to Apptainer/Singularity
 apptainer build bioinfo-swissknife.sif docker://fcliquet/bioinfo-swissknife:latest
 ```
+
+## github automated workflow
+
+The image is automatically built and pushed to the docker hub: [here](https://hub.docker.com/repository/docker/fcliquet/bioinfo-swissknife/general).
