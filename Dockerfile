@@ -15,7 +15,13 @@ RUN conda install -y \
     samtools \
     samblaster \
     sambamba \
-    java-1.8.0-openjdk-cos7-s390x && \
+    java-1.8.0-openjdk-cos7-s390x \
+    python=3.12 \
+    pandas \
+    numpy \
+    matplotlib \
+    scipy \
+    reportlab && \
     conda clean -a
 
 # Set PATH to include conda binaries
@@ -25,11 +31,17 @@ ENV PATH="/opt/conda/bin:${PATH}"
 RUN echo '#!/bin/bash' > /opt/test_tools.sh && \
     echo 'echo "Testing installed tools:"' >> /opt/test_tools.sh && \
     echo 'echo "Java: $(java -version 2>&1 | head -1)"' >> /opt/test_tools.sh && \
+    echo 'echo "Python: $(python --version)"' >> /opt/test_tools.sh && \
     echo 'echo "BWA-MEM2: $(bwa-mem2 version 2>&1 | head -1)"' >> /opt/test_tools.sh && \
     echo 'echo "Samtools: $(samtools --version | head -1)"' >> /opt/test_tools.sh && \
     echo 'echo "Samblaster: $(samblaster --version 2>&1)"' >> /opt/test_tools.sh && \
     echo 'echo "Sambamba: $(sambamba --version 2>&1 | head -1)"' >> /opt/test_tools.sh && \
     echo 'echo "Bazam: $(java -jar /opt/conda/share/bazam*/bazam.jar --version 2>&1 | head -1)"' >> /opt/test_tools.sh && \
+    echo 'echo "Pandas: $(python -c \"import pandas; print(pandas.__version__)\")"' >> /opt/test_tools.sh && \
+    echo 'echo "NumPy: $(python -c \"import numpy; print(numpy.__version__)\")"' >> /opt/test_tools.sh && \
+    echo 'echo "Matplotlib: $(python -c \"import matplotlib; print(matplotlib.__version__)\")"' >> /opt/test_tools.sh && \
+    echo 'echo "SciPy: $(python -c \"import scipy; print(scipy.__version__)\")"' >> /opt/test_tools.sh && \
+    echo 'echo "ReportLab: $(python -c \"import reportlab; print(reportlab.Version)\")"' >> /opt/test_tools.sh && \
     chmod +x /opt/test_tools.sh
 
 # Set default command

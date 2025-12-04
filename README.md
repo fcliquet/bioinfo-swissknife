@@ -4,11 +4,20 @@ docker/apptainer container with commonly used tools
 
 ## tools available
 
-- bazam 1.0.1 wih java 1.8 to run it
+### Bioinformatics Tools
+- bazam 1.0.1 with java 1.8 to run it
 - bwa-mem2
 - samtools
 - samblaster
 - sambamba
+
+### Python Environment
+- Python 3.12
+- pandas
+- numpy
+- matplotlib
+- scipy
+- reportlab
 
 ## build and push commands
 
