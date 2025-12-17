@@ -18,6 +18,7 @@ docker/apptainer container with commonly used tools
 - matplotlib
 - scipy
 - reportlab
+- pywombat (PyPI)
 
 ## build and push commands
 

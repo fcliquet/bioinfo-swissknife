@@ -24,6 +24,9 @@ RUN conda install -y \
     reportlab && \
     conda clean -a
 
+# Install PyPI-only packages
+RUN pip install --no-cache-dir pywombat
+
 # Set PATH to include conda binaries
 ENV PATH="/opt/conda/bin:${PATH}"
 
@@ -42,6 +45,7 @@ RUN echo '#!/bin/bash' > /opt/test_tools.sh && \
     echo 'echo "Matplotlib: $(python -c \"import matplotlib; print(matplotlib.__version__)\")"' >> /opt/test_tools.sh && \
     echo 'echo "SciPy: $(python -c \"import scipy; print(scipy.__version__)\")"' >> /opt/test_tools.sh && \
     echo 'echo "ReportLab: $(python -c \"import reportlab; print(reportlab.Version)\")"' >> /opt/test_tools.sh && \
+    echo 'echo "PyWombat: $(python -c \"import pywombat; print(pywombat.__version__)\")"' >> /opt/test_tools.sh && \
     chmod +x /opt/test_tools.sh
 
 # Set default command
