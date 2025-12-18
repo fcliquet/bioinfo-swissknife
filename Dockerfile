@@ -25,7 +25,7 @@ RUN conda install -y \
     conda clean -a
 
 # Install PyPI-only packages
-RUN pip install --no-cache-dir pywombat==0.4.0
+RUN pip install --no-cache-dir pywombat==0.5.0
 
 # Set PATH to include conda binaries
 ENV PATH="/opt/conda/bin:${PATH}"
