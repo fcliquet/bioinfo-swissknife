@@ -8,6 +8,7 @@ docker/apptainer container with commonly used tools
 - bazam 1.0.1 with java 1.8 to run it
 - bwa-mem2
 - samtools
+- bcftools
 - samblaster
 - sambamba
 
@@ -18,7 +19,9 @@ docker/apptainer container with commonly used tools
 - matplotlib
 - scipy
 - reportlab
+- pysam
 - pywombat (PyPI)
+- pyliftover (PyPI)
 
 ## build and push commands
 
