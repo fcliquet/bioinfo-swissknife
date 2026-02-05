@@ -22,7 +22,7 @@ docker/apptainer container with commonly used tools
 - scipy
 - reportlab
 - pysam
-- pywombat 1.2.0 (PyPI)
+- pywombat 1.2.1 (PyPI)
 - pyliftover (PyPI)
 
 ## build and push commands
