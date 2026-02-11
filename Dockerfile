@@ -23,11 +23,12 @@ RUN conda install -y \
     matplotlib \
     scipy \
     reportlab \
-    pysam && \
+    pysam \
+    cyvcf2 && \
     conda clean -a
 
 # Install PyPI-only packages
-RUN pip install --no-cache-dir pywombat==1.5.2 pyliftover
+RUN pip install --no-cache-dir pywombat==1.5.3 pyliftover
 
 # Set PATH to include conda binaries
 ENV PATH="/opt/conda/bin:${PATH}"
