@@ -28,7 +28,7 @@ RUN conda install -y \
     conda clean -a
 
 # Install PyPI-only packages
-RUN pip install --no-cache-dir pywombat==1.6.2 pyliftover
+RUN pip install --no-cache-dir pywombat==1.6.3 pyliftover
 
 # Set PATH to include conda binaries
 ENV PATH="/opt/conda/bin:${PATH}"
